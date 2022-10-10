@@ -8,6 +8,7 @@ import Unocss from 'unocss/vite'
 import { presetAttributify, presetUno } from 'unocss'
 
 import Components from 'unplugin-vue-components/vite'
+import AutoImport from 'unplugin-auto-import/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -16,6 +17,12 @@ export default defineConfig({
     Components({
       extensions: ['vue'],
       dts: true, // enabled by default if `typescript` is installed
+    }),
+    AutoImport({
+      imports: ['vue', 'vue-router'],
+      dts: true,
+      dirs: ['./src/composables'],
+      vueTemplate: true,
     }),
     Unocss({
       presets: [presetAttributify(), presetUno()],
