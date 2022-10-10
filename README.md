@@ -1,4 +1,4 @@
-## vite-vue2-ts
+## vite-vue2-ts-starter
 
 ### 依赖
 
