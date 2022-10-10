@@ -9,11 +9,13 @@ import { presetAttributify, presetUno } from 'unocss'
 
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
+//import htmlParser from '@soeyu/dev-template-parser'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     vue2(),
+    //htmlParser(),
     Components({
       extensions: ['vue'],
       dts: true, // enabled by default if `typescript` is installed
