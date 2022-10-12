@@ -5,7 +5,13 @@ import legacy from '@vitejs/plugin-legacy'
 import vue2 from '@vitejs/plugin-vue2'
 
 import Unocss from 'unocss/vite'
-import { presetAttributify, presetUno } from 'unocss'
+import {
+  presetAttributify,
+  presetIcons,
+  presetUno,
+  transformerDirectives,
+  transformerVariantGroup,
+} from 'unocss'
 
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
@@ -27,7 +33,8 @@ export default defineConfig({
       vueTemplate: true,
     }),
     Unocss({
-      presets: [presetAttributify(), presetUno()],
+      presets: [presetAttributify(), presetUno(), presetIcons()],
+      transformers: [transformerDirectives(), transformerVariantGroup()],
     }),
     legacy({
       targets: ['ie >= 11'],
